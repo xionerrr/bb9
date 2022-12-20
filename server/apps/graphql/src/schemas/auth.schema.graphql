@@ -1,0 +1,29 @@
+type Auth {
+  access_token: String
+  refresh_token: String
+  id: ID
+  email: String
+  created_at: String
+  updated_at: String
+}
+
+type AuthResponse {
+  message: String
+  data: Auth
+  timestamp: String
+}
+
+input SignIn {
+  email: String!
+  password: String!
+}
+
+input SignUp {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  signIn(input: SignIn): AuthResponse
+  signUp(input: SignUp): AuthResponse
+}

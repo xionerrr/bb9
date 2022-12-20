@@ -1,0 +1,18 @@
+type Info {
+  id: ID
+  email: String
+  hashedRt: String
+  hashedPass: String
+  created_at: String
+  updated_at: String
+}
+
+type InfoResponse {
+  message: String
+  data: Auth
+  timestamp: String
+}
+
+type Query {
+  getInfo: InfoResponse
+}

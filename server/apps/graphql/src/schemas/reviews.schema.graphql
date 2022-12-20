@@ -1,0 +1,52 @@
+type Review {
+  id: ID
+  text1: String
+  text2: String
+  text3: String
+  description: String
+  summary: String
+  nickname: String
+  created_at: String
+  updated_at: String
+}
+
+type Reviews {
+  reviews: [Review]
+  total: String
+}
+
+input FindReviews {
+  title: String
+  limit: String
+  page: String
+}
+
+input NewReview {
+  text1: String!
+  text2: String!
+  text3: String!
+  description: String
+  summary: String!
+  nickname: String!
+}
+
+input UpdateReview {
+  id: ID!
+  text1: String
+  text2: String
+  text3: String
+  description: String
+  summary: String
+  nickname: String
+}
+
+type Query {
+  reviews(input: FindReviews): Reviews
+  review(id: ID!): Review
+}
+
+type Mutation {
+  createReview(input: NewReview): Review
+  updateReview(input: UpdateReview): Review
+  deleteReview(id: ID!): Review
+}
